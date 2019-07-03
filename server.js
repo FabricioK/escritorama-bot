@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = process.env.TOKEN || 'NTk1OTYxNjg3NTM4OTI1NTg1.XRyncA._WqIL4wNlgh5rWPWvi35EyelTfY';
@@ -60,3 +64,11 @@ client.on('messageReactionRemove', (messageReaction, user) => {
 });
 
 client.login(TOKEN);
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.listen(process.env.PORT || 4000, function(){
+    console.log('Your node js server is running');
+});

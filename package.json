@@ -1,13 +1,14 @@
 {
   "name": "escritorama-bot",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1"
   }
 }
