@@ -4,15 +4,15 @@ const path = require('path');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const TOKEN = process.env.TOKEN || 'NTk1OTYxNjg3NTM4OTI1NTg1.XRyncA._WqIL4wNlgh5rWPWvi35EyelTfY';
+const TOKEN = process.env.TOKEN;
+const MESSAGE_ID = process.env.MESSAGE_ID;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
 const manageevent = (eventName, event ) => {
-    if (event.d.message_id === '595972412819111986') {
+    if (event.d.message_id === MESSAGE_ID) {
         const reactionChannel = client.channels.get(event.d.channel_id);
         if (reactionChannel.messages.has(event.d.message_id)) return;
         else {
